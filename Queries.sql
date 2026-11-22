@@ -10,3 +10,16 @@ JOIN SupplierIngredients
     ON RecipeIngredients.IngredientId = SupplierIngredients.IngredientId
 JOIN Suppliers
     ON SupplierIngredients.SupplierId = Suppliers.Id;
+
+SELECT
+    Suppliers.Name,
+    Ingredients.Name,
+    Purchases.QuantityKg,
+    Purchases.PurchaseDate
+FROM Purchases
+JOIN Suppliers ON Purchases.SupplierId = Suppliers.Id
+JOIN Ingredients ON Purchases.IngredientId = Ingredients.Id;
+
+SELECT Name, StockQuantityKg
+FROM Ingredients
+ORDER BY StockQuantityKg ASC;
